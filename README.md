@@ -6,27 +6,42 @@ All the following configurations is tested on Cisco ASR running Cisco IOS XE Sof
 Configuration
 
 ASR#sh run | sec flow
+
 flow record Incoming-UDP500
+
 match transport udp destination-port
+
 match ipv4 source address
+
 collect counter bytes
+
 collect counter packets
+
 flow exporter UDP500_exporter
+
 flow monitor UDP500_Monitor
+
 record Incoming-UDP500
+
 ip flow monitor UDP500_Monitor input
+
 alias exec udp500 sh flow mon UDP500_Monitor cache filter transport udp destination-port 500 sort highest counter packet top 50
 
 !!!under Internet-facing int G0/0/0, Apply the monitor
+
 ip flow monitor UDP500_Monitor input
+
 
 Usage
 
 Type "udp500" on exec mode, and top 50 UDP500 talkers will be displayed. 
 
 ASR#udp500
+
 Processed 2764 flows
+
 Matched 50 flows
+
 Aggregated to 50 flows
 Showing the top 50 flows
 
