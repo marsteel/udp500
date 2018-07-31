@@ -43,17 +43,27 @@ Processed 2764 flows
 Matched 50 flows
 
 Aggregated to 50 flows
+
 Showing the top 50 flows
 
 IPV4 SRC ADDR    UDP DST PORT       bytes        pkts
+
 ===============  ============  ==========  ==========
+
 xx.56.xxx.156            500    16477820       88214
+
 xxx.47.xx.1              500    13959920       42680
+
 xx.78.xxx.42             500     2255632       15065
+
 xx.0.x.66                500      927144        6935
+
 x.107.x.198              500     1507284        5841
+
 x.135.x.2                500     1127736        3641
+
 x.x.4.x                  500      958728        3424
+
 x.x.5.242                500      738648        2640
 
 
@@ -62,9 +72,15 @@ Follow up with Peer's network administrator
 Check each top talker about the following behavior
 
 o	Continuous inbound Phase 1 request via ISAKMP UDP500
+
 	Multiple IKE/Phase1 SA are Up
+
 	Multiple IKE/Phase1 SA are Down, and Peer is keeping requesting new IKE/Phase1,  Multiple short-lived IKE/Phase1 SA
+
 	Show cry isa sa | sec Peer-IP
+
 o	Continuous inbound Phase 2 request via ISAKMP UDP500
+
 	Multiple IPsec/Phase2 SA are Up for one single ACL entry
+
 	Multiple IPsec/Phase2 requests for non-configured ACL entry
